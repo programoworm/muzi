@@ -8,7 +8,7 @@ load_dotenv()
 
 TOKEN=os.getenv("DISCORD_TOKEN")
 yt.utils.bug_reports_message=lambda: ''
-bot=commands.Bot(command_prefix='.')
+bot=commands.Bot(command_prefix='')
 
 ytdl_format_options={
     'format': 'bestaudio/best',
@@ -49,7 +49,7 @@ async def on_ready():
 	channel=bot.get_channel(578511881044754451)
 	await channel.send('Hey, this is MUZI\n I was created by Programoworm')
 
-@bot.command(name='play')
+@bot.command(name='p')
 async def play(ctx,url):
 	if not ctx.message.author.voice:
 		await ctx.send("{} is not connected to a voice channel".format(ctx.message.author.name))
